@@ -105,9 +105,8 @@ function UniversitySearch() {
               </div>
               <div>
                 <a
-                  href={university.web_page}
+                  href={university.web_pages}
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="cursor-pointer font-semibold text-blue-500 hover:underline"
                 >
                   {university.name}

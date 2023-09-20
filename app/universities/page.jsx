@@ -44,6 +44,7 @@ export default async function AllUnis() {
                       <a
                         className="inline-flex items-center text-blue-600 hover:underline"
                         href={uni.web_pages}
+                        target="_blank"
                       >
                         {uni.web_pages}
                       </a>
