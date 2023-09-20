@@ -1,5 +1,5 @@
-export default async function getUniversities() {
-  const res = await fetch("http://universities.hipolabs.com/search?");
+export default async function getUnis() {
+  const res = await fetch("http://universities.hipolabs.com/search?limit=10");
   if (!res.ok) {
     throw new Error("Sorry, failed to fetch universities");
   }

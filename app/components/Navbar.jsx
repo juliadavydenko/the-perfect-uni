@@ -7,7 +7,8 @@ export default function Navbar() {
     <nav>
       <Image src={Logo} alt="The Perfect Uni logo" width={70} quality={100} />
       <h1>The Perfect Uni</h1>
-      <Link href="/">Main Page</Link>
+      <Link href="/">Main</Link>
+      <span> | </span>
       <Link href="/universities">All Universities</Link>
     </nav>
   );
