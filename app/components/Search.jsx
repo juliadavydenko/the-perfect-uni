@@ -27,14 +27,11 @@ function UniversitySearch() {
   };
 
   return (
-    <div>
-      <h1 className="text-center mt-6 mb-8 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        Find The University Of{" "}
-        <mark className="px-2 text-white bg-teal-600 rounded dark:bg-teal-500">
-          Your Dream!
-        </mark>{" "}
-      </h1>
-      <form onSubmit={handleSubmit}>
+    <div className="mb-6">
+      <form
+        className="mx-auto mb-0 mt-8 max-w-md space-y-4"
+        onSubmit={handleSubmit}
+      >
         <label className="block">
           <span className="block text-sm font-medium text-slate-700">
             University Name:
@@ -48,37 +45,47 @@ function UniversitySearch() {
     "
             type="text"
             value={name}
+            placeholder="e.g. Aarhus University"
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <label className="block">
-          <span className="block text-sm font-medium text-slate-700">
-            {" "}
-            Country:
-          </span>
-          <input
-            className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+        <div className="mb-6">
+          <label className="block">
+            <span className="block text-sm font-medium text-slate-700">
+              {" "}
+              Country:
+            </span>
+            <input
+              className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
       focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
       invalid:border-pink-500 invalid:text-pink-600
       focus:invalid:border-pink-500 focus:invalid:ring-pink-500
     "
-            type="text"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-          />
-        </label>
+              type="text"
+              value={country}
+              placeholder="e.g. Denmark"
+              onChange={(e) => setCountry(e.target.value)}
+            />
+          </label>
+        </div>
         <button
-          className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-72 mt-5"
+          className="block mx-auto text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           type="submit"
         >
           Search
         </button>
       </form>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="mt-4"></div>
+      <div className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {results.length === 0 ? (
-          <p>No matching universities found. Please check your input</p>
+          <div className="col-span-full flex items-center justify-center">
+            <div className="mx-auto text-center bg-red-400 rounded-xl shadow-lg p-4">
+              <p className="text-white-500 text-center">
+                No matching universities found. Please check your input
+              </p>{" "}
+            </div>
+          </div>
         ) : (
           results.map((university) => (
             <div

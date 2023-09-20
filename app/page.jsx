@@ -1,25 +1,21 @@
 import Search from "./components/Search";
 import Image from "next/image";
 import Unipic from "../public/Uni-pic.jpg";
+import ImportantInfo from "./components/ImportantInfo";
 
 export default async function Home() {
   return (
     <main>
       <div className="relative mx-11">
-        {/* // style={{
-        //   // display: "flex",
-        //   justifyContent: "center",
-        //   alignItems: "center",
-        // }}
-      > */}
+        <h1 className="text-center mt-6 mb-8 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+          Find The University Of{" "}
+          <mark className="px-2 text-white bg-teal-600 rounded dark:bg-teal-500">
+            Your Dream!
+          </mark>{" "}
+        </h1>
         <Search />
 
-        <p className="text-center mb-3 text-gray-500 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left">
-          The location and environment of a university can greatly affect your
-          overall experience. Consider whether you prefer an urban or rural
-          setting, the climate, and other factors that can impact your lifestyle
-          and well-being.
-        </p>
+        <ImportantInfo />
       </div>
     </main>
   );
