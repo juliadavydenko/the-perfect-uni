@@ -29,7 +29,7 @@ function UniversitySearch() {
   };
 
   return (
-    <div className="mb-6">
+    <div className="mb-6 mt-16">
       <form
         className="mx-auto mb-0 mt-8 max-w-md space-y-4"
         onSubmit={handleSubmit}

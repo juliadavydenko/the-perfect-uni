@@ -1,7 +1,7 @@
 export default function ImportantInfo() {
   return (
     <section>
-      <div className="mb-6">
+      <div className="mb-6 mt-56">
         <div className="mx-auto mb-0 mt-8 max-w-md space-y-4">
           <h2 className="text-teal-600 text-3xl font-bold sm:text-4xl">
             Why choosing the right university is so important?
