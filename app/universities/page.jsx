@@ -6,11 +6,8 @@ export default async function AllUnis() {
   const unis = await getUnis();
   return (
     <div className="mx-8">
-      <h1 className="text-center mt-6 mb-8 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        List Of{" "}
-        <mark className="px-2 text-white bg-teal-600 rounded dark:bg-teal-500">
-          All
-        </mark>{" "}
+      <h1 className="text-center mt-6 mb-8 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
+        List Of <mark className="px-2 text-white bg-teal-600 rounded">All</mark>{" "}
         Universities:
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
@@ -21,7 +18,7 @@ export default async function AllUnis() {
             return (
               <div
                 key={uni.name}
-                className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow"
               >
                 <div className="flex items-center space-x-4">
                   <div className="shrink-0">
