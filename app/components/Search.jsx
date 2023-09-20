@@ -7,6 +7,7 @@ function UniversitySearch() {
   const [name, setName] = useState("");
   const [country, setCountry] = useState("");
   const [results, setResults] = useState([]);
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ function UniversitySearch() {
       if (response.ok) {
         const data = await response.json();
         setResults(data);
+        setShowMessage(data.length === 0);
       } else {
         console.error("API request failed with status:", response.status);
       }
@@ -76,48 +78,47 @@ function UniversitySearch() {
           Search
         </button>
       </form>
+      {showMessage && results.length === 0 && (
+        <div className="col-span-full flex items-center justify-center">
+          <div className="mx-auto text-center bg-red-400 rounded-xl shadow-lg p-4">
+            <p className="text-white-500 text-center">
+              No matching universities found. Please check your input.
+            </p>{" "}
+          </div>
+        </div>
+      )}
       <div className="mt-4"></div>
       <div className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {results.length === 0 ? (
-          <div className="col-span-full flex items-center justify-center">
-            <div className="mx-auto text-center bg-red-400 rounded-xl shadow-lg p-4">
-              <p className="text-white-500 text-center">
-                No matching universities found. Please check your input
-              </p>{" "}
-            </div>
-          </div>
-        ) : (
-          results.map((university) => (
-            <div
-              key={university.domain}
-              className="bg-white rounded-xl shadow-lg p-4"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="shrink-0">
-                  <Image
-                    src={Icon}
-                    alt="University Icon"
-                    width={70}
-                    quality={100}
-                  />
-                </div>
-                <div>
-                  <a
-                    href={university.web_page}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cursor-pointer font-semibold text-blue-500 hover:underline"
-                  >
-                    {university.name}
-                  </a>
-                  <p className="text-gray-500">
-                    {university.country} ({university.alpha_two_code})
-                  </p>
-                </div>
+        {results.map((university) => (
+          <div
+            key={university.domain}
+            className="bg-white rounded-xl shadow-lg p-4"
+          >
+            <div className="flex items-center space-x-4">
+              <div className="shrink-0">
+                <Image
+                  src={Icon}
+                  alt="University Icon"
+                  width={70}
+                  quality={100}
+                />
+              </div>
+              <div>
+                <a
+                  href={university.web_page}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer font-semibold text-blue-500 hover:underline"
+                >
+                  {university.name}
+                </a>
+                <p className="text-gray-500">
+                  {university.country} ({university.alpha_two_code})
+                </p>
               </div>
             </div>
-          ))
-        )}
+          </div>
+        ))}
       </div>
     </div>
   );
