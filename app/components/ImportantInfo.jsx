@@ -1,8 +1,8 @@
 export default function ImportantInfo() {
   return (
     <section>
-      <div className="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
-        <div className="max-w-xl">
+      <div className="mb-6">
+        <div className="mx-auto mb-0 mt-8 max-w-md space-y-4">
           <h2 className="text-teal-600 text-3xl font-bold sm:text-4xl">
             Why choosing the right uni is so important?
           </h2>
@@ -13,6 +13,8 @@ export default function ImportantInfo() {
             lifestyle and well-being.
           </p>
         </div>
+      </div>
+      <div className="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
         <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
           <div className="flex items-start gap-4">
             <span className="shrink-0 rounded-lg  bg-teal-500 p-4">
