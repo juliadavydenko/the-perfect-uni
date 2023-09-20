@@ -1,27 +1,21 @@
 import Search from "./components/Search";
 import Image from "next/image";
 import Unipic from "../public/Uni-pic.jpg";
+import ImportantInfo from "./components/ImportantInfo";
 
 export default async function Home() {
   return (
     <main>
-      <h1>FIND THE UNIVERSITY OF YOUR DREAMS</h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div className="relative mx-11">
+        <h1 className="text-center mt-6 mb-8 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+          Find The University Of{" "}
+          <mark className="px-2 text-white bg-teal-600 rounded dark:bg-teal-500">
+            Your Dream!
+          </mark>{" "}
+        </h1>
         <Search />
-      </div>
-      <div>
-        <p>
-          The location and environment of a university can greatly affect your
-          overall experience. Consider whether you prefer an urban or rural
-          setting, the climate, and other factors that can impact your lifestyle
-          and well-being.
-        </p>
+
+        <ImportantInfo />
       </div>
     </main>
   );
